@@ -78,7 +78,7 @@ def generate_plot_benchmark(fname, kinds=PLOT_KINDS):
 
 def export_figure(fig, fig_name):
     if hasattr(fig, 'to_html'):
-        return fig.to_html(include_plotlyjs=False)
+        return fig.to_html(include_plotlyjs=False, full_html=False)
 
     fig_basename = f"{fig_name}.svg"
     save_name = BUILD_DIR_FIGURES / fig_basename
@@ -211,3 +211,4 @@ def main(patterns=(), benchmarks=()):
 
 if __name__ == "__main__":
     main()
+
